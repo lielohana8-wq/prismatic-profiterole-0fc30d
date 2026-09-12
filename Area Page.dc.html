@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#1A1D22;font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+a{color:#1A1D22;text-decoration:none}
+a:hover{color:#B8730A}
+h1,h2,h3{margin:0}
+p{margin:0}
+summary::-webkit-details-marker{display:none}
+details[open] summary span[aria-hidden]{transform:rotate(45deg)}
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px clamp(16px,4vw,40px);background:#14171C">
+  <a href="/" aria-label="Northmark Garage Door — home" style="display:flex;flex-direction:column;line-height:1;color:#FFFFFF">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;letter-spacing:.08em">NORTHMARK</span>
+    <span style="font-size:10px;letter-spacing:.32em;color:#F5A524;font-weight:700;margin-top:3px">GARAGE DOOR</span>
+  </a>
+  <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+  <nav aria-label="Primary" style="display:flex;gap:28px;font-size:15px;font-weight:500">
+    <a href="/#services" style="color:#E7E4DC" style-hover="color:#F5A524">Services</a>
+    <a href="/#why" style="color:#E7E4DC" style-hover="color:#F5A524">Why Northmark</a>
+    <a href="/#areas" style="color:#E7E4DC" style-hover="color:#F5A524">Service Areas</a>
+    <a href="/#faq" style="color:#E7E4DC" style-hover="color:#F5A524">FAQ</a>
+    <a href="#estimate" style="color:#E7E4DC" style-hover="color:#F5A524">Contact</a>
+  </nav>
+  </sc-if>
+  <a href="tel:+14165056228" style="display:inline-flex;align-items:center;background:#F5A524;color:#141518;font-weight:700;font-size:15px;padding:11px 18px;border-radius:6px;white-space:nowrap" style-hover="background:#FFC24D;color:#141518">416-505-6228</a>
+</header>
+
+<main>
+<section style="background:#14171C;color:#FFFFFF;position:relative;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 0%,rgba(255,196,110,.18),rgba(255,196,110,0) 60%)"></div>
+  <div style="position:relative;max-width:1160px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(16px,4vw,40px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
+    <nav aria-label="Breadcrumb" style="font-size:14px;color:#B4B9C2;display:flex;gap:8px"><a href="/" style="color:#B4B9C2">Home</a><span>›</span><a href="/#areas" style="color:#B4B9C2">Service Areas</a><span>›</span><span style="color:#FFFFFF">{{ city.name }}</span></nav>
+    <h1 style="width:100%;text-wrap:balance;font-weight:700;font-size:clamp(34px,5vw,62px);line-height:1.05;letter-spacing:-.02em">Garage Door Repair in {{ city.name }}</h1>
+    <p style="font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:#CFCCC4;max-width:60ch">{{ city.intro }}</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px">
+      <a href="tel:+14165056228" style="display:inline-flex;align-items:center;background:#F5A524;color:#141518;font-weight:700;font-size:19px;padding:15px 28px;border-radius:6px;box-shadow:0 12px 40px rgba(245,165,36,.3)" style-hover="background:#FFC24D;color:#141518">Call 416-505-6228</a>
+      <a href="#estimate" style="display:inline-flex;align-items:center;color:#FFFFFF;border:1.5px solid rgba(255,255,255,.45);font-weight:600;font-size:17px;padding:14px 26px;border-radius:6px" style-hover="border-color:#F5A524;color:#F5A524">Book a Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Why homeowners call Northmark" style="background:#FFFFFF;border-bottom:1px solid #ECEDEF">
+  <div style="max-width:1160px;margin:0 auto;padding:22px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;justify-content:center;gap:12px 36px;font-weight:600;font-size:16px">
+    <span style="display:flex;align-items:center;gap:8px"><span style="color:#B8730A">✓</span>Free estimates</span><span style="display:flex;align-items:center;gap:8px"><span style="color:#B8730A">✓</span>Same-day in {{ city.short }}</span><span style="display:flex;align-items:center;gap:8px"><span style="color:#B8730A">✓</span>Warranty on every job</span><span style="display:flex;align-items:center;gap:8px"><span style="color:#B8730A">✓</span>1,500+ customers</span><span style="display:flex;align-items:center;gap:8px"><span style="color:#B8730A">✓</span>Open 24/7</span>
+  </div>
+</section>
+
+<section aria-labelledby="local-h" style="background:#F7F7F5">
+  <div style="max-width:1160px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px 72px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="width:44px;height:4px;background:#F5A524;border-radius:2px"></span>
+      <h2 id="local-h" style="font-weight:700;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.02em">What we fix most in {{ city.name }}</h2>
+      <p style="font-size:17px;line-height:1.55;color:#5B6270">{{ city.local }}</p>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ city.problems }}" as="pr" hint-placeholder-count="4">
+          <li style="background:#FFFFFF;border:1px solid #E6E7EA;border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:4px"><h3 style="font-weight:700;font-size:19px">{{ pr.t }}</h3><p style="font-size:15.5px;line-height:1.5;color:#5B6270">{{ pr.d }}</p></li>
+        </sc-for>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:84px">
+      <div style="background:#FFFFFF;border:1px solid #E6E7EA;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="font-weight:700;font-size:19px">Neighbourhoods we serve in {{ city.name }}</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ city.hoods }}" as="hd" hint-placeholder-count="9"><span style="font-size:14.5px;font-weight:500;padding:7px 12px;border-radius:999px;background:#F7F7F5;border:1px solid #E6E7EA">{{ hd }}</span></sc-for>
+        </div>
+      </div>
+      <div style="background:#14171C;color:#FFFFFF;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="font-weight:700;font-size:19px">Garage door services in {{ city.name }}</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;font-size:15px;color:#B4B9C2">
+          <li>Garage door repair</li><li>Spring replacement</li><li>Cable &amp; roller repair</li><li>Opener repair &amp; install</li><li>New door installation</li><li>Off-track repair</li><li>Panel replacement</li><li>Weather seal</li><li>Commercial doors</li><li>24/7 emergency</li>
+        </ul>
+        <a href="tel:+14165056228" style="margin-top:6px;display:inline-flex;justify-content:center;background:#F5A524;color:#141518;font-weight:700;font-size:18px;padding:14px 20px;border-radius:8px" style-hover="background:#FFC24D;color:#141518">Call 416-505-6228</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="faq-h" style="background:#FFFFFF">
+  <div style="max-width:880px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(16px,4vw,40px);display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px"><span style="width:44px;height:4px;background:#F5A524;border-radius:2px"></span><h2 id="faq-h" style="width:100%;text-wrap:balance;font-weight:700;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.02em">Garage door questions from {{ city.name }}</h2></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ city.faqs }}" as="f" hint-placeholder-count="3">
+        <details style="background:#F7F7F5;border-radius:12px;padding:0 22px">
+          <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-weight:600;font-size:19px;line-height:1.3">{{ f.q }}<span aria-hidden="true" style="width:30px;height:30px;border-radius:50%;background:#1A1D22;color:#F5A524;display:flex;align-items:center;justify-content:center;font-size:22px;flex:none;transition:transform .2s">+</span></summary>
+          <p style="padding:0 0 22px;font-size:17px;line-height:1.6;color:#5B6270">{{ f.a }}</p>
+        </details>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="estimate" aria-labelledby="est-h" style="background:#F5A524">
+  <div style="max-width:1160px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px 72px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px;color:#141518">
+      <h2 id="est-h" style="font-weight:800;font-size:clamp(32px,4.2vw,54px);line-height:1.02;letter-spacing:-.03em">Free estimate in {{ city.name }} — today.</h2>
+      <p style="font-size:18px;line-height:1.5;max-width:44ch">Call and a dispatcher books the next available technician for {{ city.name }}.</p>
+      <a href="tel:+14165056228" style="display:inline-flex;align-self:flex-start;align-items:center;background:#141518;color:#FFFFFF;font-weight:700;font-size:clamp(22px,2.4vw,30px);padding:18px 32px;border-radius:8px" style-hover="background:#2A2E35;color:#FFFFFF">416-505-6228</a>
+      <p style="font-size:15px;font-weight:500">Open 24 hours, 7 days</p>
+    </div>
+    <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#FFFFFF;border-radius:16px;padding:40px 32px;display:flex;flex-direction:column;gap:10px;box-shadow:0 24px 60px rgba(0,0,0,.15)"><h3 style="font-weight:700;font-size:28px">Thanks — we'll call you shortly.</h3><p style="font-size:17px;color:#5B6270">Need us now? <a href="tel:+14165056228" style="font-weight:700;color:#B8730A">Call 416-505-6228</a>.</p></div>
+    </sc-if>
+    <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+      <form name="callback" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" onSubmit="{{ submit }}" style="background:#FFFFFF;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;box-shadow:0 24px 60px rgba(0,0,0,.15)">
+        <h3 style="font-weight:700;font-size:22px;margin-bottom:4px">Request a callback</h3><input type="hidden" name="form-name" value="callback"><input type="hidden" name="page" value="{{ pageName }}"><p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:#5B6270">Name<input name="name" required autocomplete="name" style="font:inherit;font-size:17px;font-weight:400;padding:13px 14px;background:#F7F7F5;border:1px solid #E6E7EA;color:#1A1D22;border-radius:8px;outline:none" style-focus="border-color:#F5A524;background:#FFFFFF"></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:#5B6270">Phone<input name="phone" type="tel" required autocomplete="tel" style="font:inherit;font-size:17px;font-weight:400;padding:13px 14px;background:#F7F7F5;border:1px solid #E6E7EA;color:#1A1D22;border-radius:8px;outline:none" style-focus="border-color:#F5A524;background:#FFFFFF"></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:#5B6270">What's the door doing?<input name="issue" placeholder="e.g. Loud bang, won't open" style="font:inherit;font-size:17px;font-weight:400;padding:13px 14px;background:#F7F7F5;border:1px solid #E6E7EA;color:#1A1D22;border-radius:8px;outline:none" style-focus="border-color:#F5A524;background:#FFFFFF"></label>
+        <button type="submit" style="font:inherit;font-weight:700;font-size:18px;padding:16px 22px;background:#141518;color:#FFFFFF;border:0;border-radius:8px;cursor:pointer;margin-top:4px" style-hover="background:#2A2E35">Send Request</button>
+      </form>
+    </sc-if>
+  </div>
+</section>
+</main>
+
+<footer style="background:#14171C;color:#B4B9C2">
+  <div style="max-width:1160px;margin:0 auto;padding:56px clamp(16px,4vw,40px) 100px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;font-size:15px;line-height:1.6">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;flex-direction:column;line-height:1;color:#FFFFFF"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;letter-spacing:.08em">NORTHMARK</span><span style="font-size:10px;letter-spacing:.32em;color:#F5A524;font-weight:700;margin-top:3px">GARAGE DOOR</span></div>
+      <p>Garage door repair, spring replacement, opener repair and new door installation across Toronto and the GTA.</p>
+      <a href="tel:+14165056228" style="font-weight:700;font-size:24px;color:#FFFFFF" style-hover="color:#F5A524">416-505-6228</a>
+      <p>Open 24/7 · Toronto, Ontario</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-weight:700;font-size:14px;letter-spacing:.12em;color:#FFFFFF">NEARBY SERVICE AREAS</span>
+      <sc-for list="{{ nearby }}" as="a" hint-placeholder-count="11"><a href="{{ a.href }}" style="color:#B4B9C2" style-hover="color:#F5A524">Garage Door Repair {{ a.name }}</a></sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-weight:700;font-size:14px;letter-spacing:.12em;color:#FFFFFF">COMPANY</span>
+      <a href="/" style="color:#B4B9C2" style-hover="color:#F5A524">Home</a><a href="/#services" style="color:#B4B9C2" style-hover="color:#F5A524">Services</a><a href="/#why" style="color:#B4B9C2" style-hover="color:#F5A524">Why Northmark</a><a href="/#faq" style="color:#B4B9C2" style-hover="color:#F5A524">FAQ</a>
+      <p style="margin-top:12px;font-size:13px;color:#7C838E">© 2026 Northmark Garage Door. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+  <a href="tel:+14165056228" style="position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;justify-content:center;background:#F5A524;color:#141518;font-weight:700;font-size:18px;padding:16px;box-shadow:0 -6px 24px rgba(0,0,0,.25)">Call Now · 416-505-6228</a>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:900},&quot;city&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;toronto&quot;,&quot;options&quot;:[&quot;toronto&quot;,&quot;north-york&quot;,&quot;scarborough&quot;,&quot;etobicoke&quot;,&quot;mississauga&quot;,&quot;brampton&quot;,&quot;vaughan&quot;,&quot;markham&quot;,&quot;richmond-hill&quot;,&quot;oakville&quot;,&quot;pickering-ajax&quot;,&quot;newmarket-aurora&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
+const P = (t, d) => ({ t, d });
+const F = (q, a) => ({ q, a });
+const SLUGS = [['Toronto', 'toronto'], ['North York', 'north-york'], ['Scarborough', 'scarborough'], ['Etobicoke', 'etobicoke'], ['Mississauga', 'mississauga'], ['Brampton', 'brampton'], ['Vaughan', 'vaughan'], ['Markham', 'markham'], ['Richmond Hill', 'richmond-hill'], ['Oakville', 'oakville'], ['Pickering & Ajax', 'pickering-ajax'], ['Newmarket & Aurora', 'newmarket-aurora']];
+const STD = [
+  P('Broken torsion springs', 'The most common call. Both springs replaced with high-cycle units sized to the door, then balanced.'),
+  P('Doors off track', 'Bumped tracks straightened or replaced, rollers reset, door safety-tested.'),
+  P('Frayed or snapped cables', 'Galvanized cables replaced and the door re-levelled.'),
+  P('Opener failures', 'Stripped gears and dead boards repaired, or replaced with quiet belt-drive openers.')
+];
+const stdFaq = (n) => [
+  F(`How fast can you get to ${n}?`, `Same day in most cases, often within hours. Emergency garage door repair in ${n} is available 24/7.`),
+  F('Is the estimate free?', 'Yes. No charge to come out and diagnose, no obligation. Nothing starts until you approve.'),
+  F(`Do you install new garage doors in ${n}?`, `Yes — insulated steel, carriage-house and modern doors, measured and installed by our own crew across ${n}.`)
+];
+const AREAS = {
+  'toronto': { name: 'Toronto', short: 'Toronto', intro: 'Same-day garage door repair anywhere in Toronto — laneway garages, detached garages, condo and commercial doors. Free estimate first, warranty after.', local: 'Toronto\u2019s older homes mean narrow laneway garages, single doors on original openings and hardware that is often 20+ years old.', hoods: ['The Beaches', 'Leslieville', 'Riverdale', 'The Annex', 'High Park', 'Roncesvalles', 'Forest Hill', 'Leaside', 'The Danforth', 'Bloor West Village', 'The Junction', 'Cabbagetown'], problems: [P('Broken extension springs', 'Common on older single doors. We convert to safer torsion systems where headroom allows.'), P('Rusted bottom panels and seals', 'Salt and slush eat the bottom section first. Replaced without a whole new door.'), P('Openers without safety sensors', 'Pre-1993 openers replaced with quiet, modern belt-drive units.'), P('Low-headroom laneway garages', 'Low-headroom tracks and compact openers for garages built long before minivans.')], faqs: [F('How quickly can you reach downtown Toronto?', 'Our Toronto technicians are on the road across the city all day. Most calls are attended the same day, often within a few hours; emergencies are covered 24/7.'), F('Can you service a laneway garage with almost no headroom?', 'Yes. Low-headroom track kits and compact openers let us repair and even replace doors in the tightest Toronto laneway garages.'), F('Do you install new garage doors in Toronto?', 'We measure, supply and install insulated steel, carriage-house and modern doors across Toronto, with a free in-home estimate.')] },
+  'north-york': { name: 'North York', short: 'North York', intro: 'Fast, same-day garage door repair across North York — Willowdale, Bayview Village, Don Mills and beyond. Springs, cables, openers and new doors.', local: 'North York mixes 1960s bungalows running their original doors with new infill homes whose builder-grade springs fail early.', hoods: ['Willowdale', 'Bayview Village', 'Don Mills', 'York Mills', 'Downsview', 'Newtonbrook', 'Lansing', 'Bathurst Manor', 'Henry Farm', 'Hoggs Hollow', 'Parkwoods'], problems: [P('Original 1960s–70s hardware', 'Worn rollers, stretched cables and tired springs on doors never serviced. Refreshed in one visit.'), P('Builder-grade springs on new builds', 'Low-cycle springs replaced with high-cycle torsion springs sized to the door.'), P('Noisy double doors under bedrooms', 'Sealed nylon rollers and a tune-up make them quiet.'), P('Opener failures', 'Stripped gears and dead boards repaired or replaced with quiet belt-drive units.')], faqs: stdFaq('North York') },
+  'scarborough': { name: 'Scarborough', short: 'Scarborough', intro: 'Same-day garage door repair across Scarborough — Agincourt to Guildwood, Malvern to Birch Cliff. Free estimates and a warranty on every job.', local: 'Scarborough\u2019s bungalows and side-splits carry attached single doors that see heavy daily use, plus plaza and warehouse doors along the industrial corridors.', hoods: ['Agincourt', 'Malvern', 'Guildwood', 'Wexford', 'Birch Cliff', 'Rouge', 'West Hill', 'Bendale', 'Woburn', 'Cliffside', 'Scarborough Village'], problems: STD, faqs: stdFaq('Scarborough') },
+  'etobicoke': { name: 'Etobicoke', short: 'Etobicoke', intro: 'Same-day garage door repair across Etobicoke — Mimico, The Kingsway, Islington, Rexdale and Long Branch. Springs, cables, openers and installations.', local: 'Lakeshore humidity is hard on Etobicoke doors: rusted tracks, corroded cables and seized rollers are our most frequent calls here.', hoods: ['Mimico', 'The Kingsway', 'Islington', 'Rexdale', 'Long Branch', 'Alderwood', 'Humber Bay', 'Markland Wood', 'Eringate', 'New Toronto', 'Humber Valley'], problems: [P('Corroded cables and tracks', 'Lake humidity corrodes hardware. Galvanized replacements that last.'), P('Seized rollers', 'Replaced with sealed nylon rollers — quiet and rust-free.'), P('Broken springs', 'Both replaced with high-cycle torsion springs.'), P('Opener upgrades', 'Quiet belt-drive openers with battery backup for power outages.')], faqs: stdFaq('Etobicoke') },
+  'mississauga': { name: 'Mississauga', short: 'Mississauga', intro: 'Same-day garage door repair across Mississauga — Port Credit, Streetsville, Erin Mills, Meadowvale, Clarkson and Malton. Free estimates, warranty on every job.', local: 'Mississauga\u2019s large suburban stock means double doors and 1990s openers reaching end of life — springs, openers and panel replacements are our top calls.', hoods: ['Port Credit', 'Streetsville', 'Erin Mills', 'Meadowvale', 'Clarkson', 'Lorne Park', 'Churchill Meadows', 'Cooksville', 'Lisgar', 'Malton', 'Applewood'], problems: STD, faqs: stdFaq('Mississauga') },
+  'brampton': { name: 'Brampton', short: 'Brampton', intro: 'Same-day garage door repair across Brampton — Bramalea, Mount Pleasant, Springdale, Heart Lake and Castlemore. Free estimates and fast arrival.', local: 'Brampton\u2019s newer subdivisions run builder-grade springs that typically fail around year seven to ten. We replace them with high-cycle springs built to last.', hoods: ['Bramalea', 'Mount Pleasant', 'Springdale', 'Heart Lake', 'Castlemore', 'Fletcher\u2019s Meadow', 'Sandalwood', 'Downtown Brampton', 'Credit Valley', 'Northwood Park'], problems: STD, faqs: stdFaq('Brampton') },
+  'vaughan': { name: 'Vaughan', short: 'Vaughan', intro: 'Same-day garage door repair across Vaughan — Woodbridge, Maple, Thornhill, Kleinburg and Concord. Springs, openers, insulated and carriage-style doors.', local: 'Vaughan\u2019s larger homes carry heavy insulated and carriage-style doors, often two or three per house. Correct spring sizing and quiet openers matter here.', hoods: ['Woodbridge', 'Maple', 'Thornhill', 'Kleinburg', 'Concord', 'Vellore Village', 'Patterson', 'Sonoma Heights', 'Beverley Glen'], problems: STD, faqs: stdFaq('Vaughan') },
+  'markham': { name: 'Markham', short: 'Markham', intro: 'Same-day garage door repair across Markham — Unionville, Milliken, Cornell, Berczy, Cachet and Wismer. Free estimates, warranty on every job.', local: 'Markham combines 1980s–90s doors due for spring and opener replacement with new-build communities where builder hardware fails early.', hoods: ['Unionville', 'Milliken', 'Cornell', 'Berczy', 'Cachet', 'Wismer', 'Greensborough', 'Angus Glen', 'Markham Village', 'Thornhill (Markham)'], problems: STD, faqs: stdFaq('Markham') },
+  'richmond-hill': { name: 'Richmond Hill', short: 'Richmond Hill', intro: 'Same-day garage door repair across Richmond Hill — Oak Ridges, Bayview Hill, Mill Pond, Jefferson and Westbrook. Free estimates and fast arrival.', local: 'Richmond Hill homes run large double doors with heavy insulated panels; spring failures and noisy openers are our most frequent calls.', hoods: ['Oak Ridges', 'Bayview Hill', 'Mill Pond', 'Jefferson', 'Westbrook', 'Elgin Mills', 'Langstaff', 'Rouge Woods', 'Doncrest'], problems: STD, faqs: stdFaq('Richmond Hill') },
+  'oakville': { name: 'Oakville', short: 'Oakville', intro: 'Same-day garage door repair across Oakville — Bronte, Glen Abbey, Joshua Creek, River Oaks and Old Oakville. Free estimates, quality parts, warranty.', local: 'Oakville homeowners expect quiet, well-finished work: premium insulated doors, belt-drive openers and hardware that matches the house.', hoods: ['Bronte', 'Glen Abbey', 'Joshua Creek', 'River Oaks', 'Kerr Village', 'Old Oakville', 'West Oak Trails', 'Clearview', 'Palermo'], problems: STD, faqs: stdFaq('Oakville') },
+  'pickering-ajax': { name: 'Pickering & Ajax', short: 'Durham', intro: 'Same-day garage door repair across Pickering and Ajax — Bay Ridges, Liverpool, Amberlea, Pickering Village, Riverside and Applecroft. Free estimates.', local: 'Durham Region\u2019s lake-effect winters are hard on seals, cables and tracks. We keep parts for every common door on the truck.', hoods: ['Bay Ridges', 'Liverpool', 'Amberlea', 'Dunbarton', 'Brock Ridge', 'Pickering Village', 'Riverside', 'Applecroft', 'Duffins Bay', 'Nottingham'], problems: STD, faqs: stdFaq('Pickering and Ajax') },
+  'newmarket-aurora': { name: 'Newmarket & Aurora', short: 'Newmarket', intro: 'Same-day garage door repair across Newmarket and Aurora — Glenway, Stonehaven, Summerhill, Bayview Northeast and Aurora Highlands. Free estimates.', local: 'Northern York Region homes see hard winters and long driveways — frozen seals, snapped springs and openers straining in the cold are our top calls.', hoods: ['Glenway', 'Stonehaven', 'Summerhill', 'Woodland Hill', 'Armitage', 'Bayview Northeast', 'Aurora Highlands', 'Hills of St Andrew', 'Aurora Village'], problems: STD, faqs: stdFaq('Newmarket and Aurora') }
+};
+class Component extends DCLogic {
+  state = { wide: true, sent: false };
+  componentDidMount() {
+    this.onResize = () => this.setState({ wide: window.innerWidth >= 920 });
+    window.addEventListener('resize', this.onResize); this.onResize();
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+  renderVals() {
+    const slug = this.props.city ?? 'toronto';
+    const city = AREAS[slug] || AREAS.toronto;
+    const nearby = SLUGS.filter(([, s]) => s !== slug).map(([name, s]) => ({ name, href: `/garage-door-repair-${s}` }));
+    return { city, nearby, pageName: city.name, wide: this.state.wide, narrow: !this.state.wide, sent: this.state.sent, notSent: !this.state.sent, submit: (e) => { e.preventDefault(); const fd = new FormData(e.target); fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(fd).toString() }).catch(() => {}); this.setState({ sent: true }); } };
+  }
+}
+</script>
+</body>
+</html>
