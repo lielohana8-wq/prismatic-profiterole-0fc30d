@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://northmarkgaragedoor.ca/sitemap.xml
+Sitemap: https://northmark-garage.ca/sitemap.xml
